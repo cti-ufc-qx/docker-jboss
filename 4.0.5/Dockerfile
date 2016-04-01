@@ -28,7 +28,7 @@ ENV JBOSS_LIB_APPS ${JBOSS_HOME}/JBoss_4.0.5.GA/server/default/lib
 #ADD web-console.jboss-web.xml /jboss-4.2.3.GA/server/default/deploy/management/console-mgr.sar/web-console.war/WEB-INF/jboss-web.xml
 
 ADD start.sh /start.sh
-RUN chmod +x start.sh
+RUN chmod +x /start.sh
 
 VOLUME ["${JBOSS_DEPLOY}", "${JBOSS_LIB_APPS}"]
 EXPOSE 8080
