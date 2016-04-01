@@ -18,14 +18,16 @@ RUN apt-get update && \
     rm jboss-4.0.5.GA.zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+    
+ENV JBOSS_DEPLOY ${JBOSS_HOME}/JBoss_4.0.5.GA/server/default/deploy
+ENV JBOSS_LIB_APPS ${JBOSS_HOME}/JBoss_4.0.5.GA/server/default/lib
 
 #ADD jmx-console.web.xml /jboss-4.2.3.GA/server/default/deploy/jmx-console.war/WEB-INF/web.xml
 #ADD jmx-console.jboss-web.xml /jboss-4.2.3.GA/server/default/deploy/jmx-console.war/WEB-INF/jboss-web.xml
 #ADD web-console.web.xml /jboss-4.2.3.GA/server/default/deploy/management/console-mgr.sar/web-console.war/WEB-INF/web.xml
 #ADD web-console.jboss-web.xml /jboss-4.2.3.GA/server/default/deploy/management/console-mgr.sar/web-console.war/WEB-INF/jboss-web.xml
 
-ADD run.sh /run.sh
-RUN chmod +x /*.sh
-
+VOLUME ["${JBOSS_DEPLOY}", "${JBOSS_LIB_APPS}"]
 EXPOSE 8080
-CMD ["/run.sh"]
+
+CMD ./run.sh -c default -b=0.0.0.0
