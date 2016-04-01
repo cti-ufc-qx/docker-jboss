@@ -20,7 +20,7 @@ RUN mkdir -p "$JBOSS_HOME"
 WORKDIR $JBOSS_HOME
     
 #ENV JBOSS_DEPLOY /jboss_4.0.5.GA/server/default/deploy
-#ENV JBOSS_LIB_APPS /jboss_4.0.5.GA/server/default/lib
+#ENV JBOSS_LIB_APPS /jboss_4.0.5.GA/server/default/lib 
 
 ENV JBOSS_DEPLOY ${JBOSS_HOME}/jBoss_4.0.5.GA/server/default/deploy
 ENV JBOSS_LIB_APPS ${JBOSS_HOME}/jBoss_4.0.5.GA/server/default/lib
