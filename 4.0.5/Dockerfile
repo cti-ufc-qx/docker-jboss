@@ -1,6 +1,11 @@
 FROM java:8-jre
 MAINTAINER Coordenadoria de Tecnologia da Informação <ccti@quixada.ufc.br>
 
+ENV JBOSS_HOME /usr/local/jboss
+ENV PATH $JBOSS_HOME/bin:$PATH
+RUN mkdir -p "$JBOSS_HOME"
+WORKDIR $JBOSS_HOME
+
 RUN apt-get update && \
     apt-get install -y pwgen unzip && \
     wget -q http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-4.0.5.GA/jboss-4.0.5.GA.zip && \
@@ -13,11 +18,6 @@ RUN apt-get update && \
 #ENV LANG en_US.UTF-8 pt_BR.UTF-8
 #ENV LANG en_US.UTF-8 pt_BR.UTF-8
 #ENV LANG en_US.UTF-8 pt_BR.UTF-8
-
-ENV JBOSS_HOME /usr/local/jboss
-ENV PATH $JBOSS_HOME/bin:$PATH
-RUN mkdir -p "$JBOSS_HOME"
-WORKDIR $JBOSS_HOME
     
 #ENV JBOSS_DEPLOY /jboss_4.0.5.GA/server/default/deploy
 #ENV JBOSS_LIB_APPS /jboss_4.0.5.GA/server/default/lib 
