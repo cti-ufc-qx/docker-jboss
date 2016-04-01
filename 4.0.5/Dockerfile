@@ -22,6 +22,7 @@ RUN apt-get update && \
 ENV JBOSS_DEPLOY /jboss_4.0.5.GA/server/default/deploy
 ENV JBOSS_LIB_APPS /jboss_4.0.5.GA/server/default/lib
 
+#
 #ENV JBOSS_DEPLOY ${JBOSS_HOME}/JBoss_4.0.5.GA/server/default/deploy
 #ENV JBOSS_LIB_APPS ${JBOSS_HOME}/JBoss_4.0.5.GA/server/default/lib
 
