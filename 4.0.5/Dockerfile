@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM java:7-jre
 MAINTAINER Coordenadoria de Tecnologia da Informação <ccti@quixada.ufc.br>
 
 #ENV JBOSS_HOME /usr/local/jboss
