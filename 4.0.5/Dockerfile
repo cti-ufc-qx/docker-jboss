@@ -25,7 +25,7 @@ RUN apt-get update && \
 #ADD web-console.jboss-web.xml /jboss-4.2.3.GA/server/default/deploy/management/console-mgr.sar/web-console.war/WEB-INF/jboss-web.xml
 
 ADD start.sh /start.sh
-RUN chmod +x /start.sh
+RUN chmod +x /*.sh
 
 VOLUME /jboss_4.0.5.GA/server/default/deploy
 VOLUME /jboss_4.0.5.GA/server/default/lib 
