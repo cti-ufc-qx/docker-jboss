@@ -30,4 +30,4 @@ ENV JBOSS_LIB_APPS ${JBOSS_HOME}/JBoss_4.0.5.GA/server/default/lib
 VOLUME ["${JBOSS_DEPLOY}", "${JBOSS_LIB_APPS}"]
 EXPOSE 8080
 
-CMD /run.sh -c default -b=0.0.0.0
+CMD /run.sh -c default -b 0.0.0.0
