@@ -9,10 +9,14 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN locale-gen en_US.UTF-8 pt_BR.UTF-8
-ENV LANG en_US.UTF-8 pt_BR.UTF-8
-ENV LANG en_US.UTF-8 pt_BR.UTF-8
-ENV LANG en_US.UTF-8 pt_BR.UTF-8
+#RUN locale-gen en_US.UTF-8 pt_BR.UTF-8
+#ENV LANG en_US.UTF-8 pt_BR.UTF-8
+#ENV LANG en_US.UTF-8 pt_BR.UTF-8
+#ENV LANG en_US.UTF-8 pt_BR.UTF-8
+
+RUN echo "en_US.UTF-8 pt_BR.UTF-8" >> /etc/locale.gen \
+   && locale-gen en_US.UTF-8 pt_BR.UTF-8 \
+   && /usr/sbin/update-locale LANG=en_US.UTF-8 pt_BR.UTF-8
 
 ENV JBOSS_HOME /usr/local/jboss
 ENV PATH $JBOSS_HOME/bin:$PATH
