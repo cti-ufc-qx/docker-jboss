@@ -22,8 +22,8 @@ WORKDIR $JBOSS_HOME
 #ENV JBOSS_DEPLOY /jboss_4.0.5.GA/server/default/deploy
 #ENV JBOSS_LIB_APPS /jboss_4.0.5.GA/server/default/lib 
 
-ENV JBOSS_DEPLOY ${JBOSS_HOME}/jBoss_4.0.5.GA/server/default/deploy
-ENV JBOSS_LIB_APPS ${JBOSS_HOME}/jBoss_4.0.5.GA/server/default/lib
+ENV JBOSS_DEPLOY ${JBOSS_HOME}/jboss_4.0.5.GA/server/default/deploy
+ENV JBOSS_LIB_APPS ${JBOSS_HOME}/jboss_4.0.5.GA/server/default/lib
 
 #ADD jmx-console.web.xml /jboss-4.2.3.GA/server/default/deploy/jmx-console.war/WEB-INF/web.xml
 #ADD jmx-console.jboss-web.xml /jboss-4.2.3.GA/server/default/deploy/jmx-console.war/WEB-INF/jboss-web.xml
