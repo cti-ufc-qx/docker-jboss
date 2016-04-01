@@ -31,4 +31,5 @@ VOLUME /jboss_4.0.5.GA/server/default/deploy
 VOLUME /jboss_4.0.5.GA/server/default/lib 
 EXPOSE 8080
 
-CMD ["/start.sh"]
+#CMD ["/start.sh"]
+CMD ["bash"]
