@@ -18,12 +18,6 @@ RUN apt-get update && \
 #ENV LANG en_US.UTF-8 pt_BR.UTF-8
 #ENV LANG en_US.UTF-8 pt_BR.UTF-8
 #ENV LANG en_US.UTF-8 pt_BR.UTF-8
-    
-ENV JBOSS_DEPLOY /jboss_4.0.5.GA/server/default/deploy
-ENV JBOSS_LIB_APPS /jboss_4.0.5.GA/server/default/lib 
-
-#ENV JBOSS_DEPLOY ${JBOSS_HOME}/jboss_4.0.5.GA/server/default/deploy
-#ENV JBOSS_LIB_APPS ${JBOSS_HOME}/jboss_4.0.5.GA/server/default/lib
 
 #ADD jmx-console.web.xml /jboss-4.2.3.GA/server/default/deploy/jmx-console.war/WEB-INF/web.xml
 #ADD jmx-console.jboss-web.xml /jboss-4.2.3.GA/server/default/deploy/jmx-console.war/WEB-INF/jboss-web.xml
@@ -33,7 +27,8 @@ ENV JBOSS_LIB_APPS /jboss_4.0.5.GA/server/default/lib
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
-VOLUME ["${JBOSS_DEPLOY}", "${JBOSS_LIB_APPS}"]
+VOLUME /jboss_4.0.5.GA/server/default/deploy
+VOLUME /jboss_4.0.5.GA/server/default/lib 
 EXPOSE 8080
 
 CMD ["/start.sh"]
