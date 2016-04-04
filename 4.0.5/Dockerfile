@@ -26,5 +26,4 @@ WORKDIR $JBOSS_HOME
 
 EXPOSE 8080
 
-#CMD ["/start.sh"]
-CMD ["${JBOSS_HOME}/bin/run.sh", "-b", "0.0.0.0"]
+CMD ["/start.sh"]
