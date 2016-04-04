@@ -2,7 +2,7 @@ FROM java:8-jre
 MAINTAINER Coordenadoria de Tecnologia da Informação <ccti@quixada.ufc.br>
 
 ENV JBOSS_HOME /usr/local/jboss
-ENV PATH $JBOSS_HOME/bin:$PATH
+ENV PATH $JBOSS_HOME/jboss-4.0.5.GA/bin:$PATH
 RUN mkdir -p "$JBOSS_HOME"
 WORKDIR $JBOSS_HOME
 
