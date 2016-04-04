@@ -7,8 +7,8 @@ RUN mkdir -p "$JBOSS_HOME"
 WORKDIR $JBOSS_HOME
 
 RUN apt-get update && \
-    apt-get install -y pwgen unzip && \
-    wget -q -O ${JBOSS_HOME} http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-4.0.5.GA/jboss-4.0.5.GA.zip && \
+    apt-get install -y unzip && \
+    wget -q http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-4.0.5.GA/jboss-4.0.5.GA.zip -d ${JBOSS_HOME} && \
     unzip -q jboss-4.0.5.GA.zip && \
     rm jboss-4.0.5.GA.zip && \
     apt-get clean && \
