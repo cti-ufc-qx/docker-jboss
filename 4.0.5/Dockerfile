@@ -27,4 +27,4 @@ VOLUME ${JBOSS_HOME}/server/default/lib
 EXPOSE 8080
 
 #CMD ["/start.sh"]
-CMD ["/start.sh"]
+CMD ["bash"]
