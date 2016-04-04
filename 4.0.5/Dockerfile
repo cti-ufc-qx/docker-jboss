@@ -7,6 +7,8 @@ ENV JBOSS_LIB  ${JBOSS_HOME}/server/default/lib
 
 RUN apt-get update && \
     apt-get install -y unzip locales && \
+    wget -q http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-4.0.5.GA/jboss-4.0.5.GA.zip && \
+    unzip -q jboss-4.0.5.GA.zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
