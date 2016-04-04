@@ -2,7 +2,7 @@ FROM java:8-jre
 MAINTAINER Coordenadoria de Tecnologia da Informação <ccti@quixada.ufc.br>
 
 ENV JBOSS_HOME /usr/local/jboss
-ENV PATH $JBOSS_HOME/jboss-4.0.5.GA/bin:$PATH
+ENV PATH $JBOSS_HOME/bin:$PATH
 RUN mkdir -p "$JBOSS_HOME"
 WORKDIR $JBOSS_HOME
 
@@ -22,8 +22,8 @@ RUN apt-get update && \
 ADD start.sh /start.sh
 RUN chmod +x /*.sh
 
-VOLUME ${JBOSS_HOME}/jboss-4.0.5.GA/server/default/deploy
-VOLUME ${JBOSS_HOME}/jboss-4.0.5.GA/server/default/lib 
+VOLUME ${JBOSS_HOME}/server/default/deploy
+VOLUME ${JBOSS_HOME}/server/default/lib 
 EXPOSE 8080
 
 #CMD ["/start.sh"]
