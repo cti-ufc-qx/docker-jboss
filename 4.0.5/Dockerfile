@@ -17,7 +17,7 @@ ENV LANG en_US.UTF-8 pt_BR.UTF-8
 
 RUN mv /jboss-4.0.5.GA ${JBOSS_HOME}
 
-ADD start.sh /start.sh
+ADD start.sh /start.sh 
 RUN chmod +x /*.sh
 
 ENV PATH $JBOSS_HOME/bin:$PATH
