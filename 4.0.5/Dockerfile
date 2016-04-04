@@ -2,8 +2,6 @@ FROM java:8-jre
 MAINTAINER Coordenadoria de Tecnologia da Informação <ccti@quixada.ufc.br>
 
 ENV JBOSS_HOME /usr/local/jboss
-ENV PATH $JBOSS_HOME/bin:$PATH
-RUN mkdir -p "$JBOSS_HOME"
 
 RUN apt-get update && \
     apt-get install -y unzip locales && \
@@ -23,7 +21,10 @@ RUN mv /jboss-4.0.5.GA ${JBOSS_HOME}
 ADD start.sh /start.sh
 RUN chmod +x /*.sh
 
+ENV PATH $JBOSS_HOME/bin:$PATH
+RUN mkdir -p "$JBOSS_HOME"
 WORKDIR $JBOSS_HOME 
+
 EXPOSE 8080
 
 #CMD ["/start.sh"]
