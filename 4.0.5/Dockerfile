@@ -2,9 +2,6 @@ FROM java:8-jre
 MAINTAINER Coordenadoria de Tecnologia da Informação <ccti@quixada.ufc.br>
 
 ENV JBOSS_HOME /usr/local/jboss
-ENV PATH $JBOSS_HOME/bin:$PATH
-RUN mkdir -p "$JBOSS_HOME"
-WORKDIR $JBOSS_HOME
 
 RUN apt-get update && \
     apt-get install -y unzip && \
@@ -18,6 +15,10 @@ RUN apt-get update && \
 #ENV LANG en_US.UTF-8 pt_BR.UTF-8
 #ENV LANG en_US.UTF-8 pt_BR.UTF-8
 #ENV LANG en_US.UTF-8 pt_BR.UTF-8
+
+ENV PATH $JBOSS_HOME/bin:$PATH
+RUN mkdir -p "$JBOSS_HOME"
+WORKDIR $JBOSS_HOME
 
 ADD start.sh /start.sh
 RUN chmod +x /*.sh
