@@ -1,10 +1,6 @@
 #!/bin/bash
 set -e
 
-wget -q http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-4.0.5.GA/jboss-4.0.5.GA.zip 
-unzip -q jboss-4.0.5.GA.zip 
-rm jboss-4.0.5.GA.zip 
-
 mv /jboss-4.0.5.GA ${JBOSS_HOME}
  
 chmod +x /*.sh 
