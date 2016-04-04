@@ -23,7 +23,7 @@ RUN mv /jboss-4.0.5.GA ${JBOSS_HOME}
 ADD start.sh /start.sh
 RUN chmod +x /*.sh
 
-WORKDIR $JBOSS_HOME
+WORKDIR $JBOSS_HOME 
 EXPOSE 8080
 
 #CMD ["/start.sh"]
