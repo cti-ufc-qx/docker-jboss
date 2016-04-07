@@ -4,16 +4,16 @@ MAINTAINER Coordenadoria de Tecnologia da Informação <ccti@quixada.ufc.br>
 ENV JBOSS_HOME /usr/local/jboss
 
 RUN apt-get update && \
-    apt-get install -y unzip locales && \
+    apt-get install -y unzip ntp locales && \
     wget -q http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-4.0.5.GA/jboss-4.0.5.GA.zip && \
     unzip -q jboss-4.0.5.GA.zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
-RUN locale-gen en_US.UTF-8 pt_BR.UTF-8
-ENV LANG en_US.UTF-8 pt_BR.UTF-8
-ENV LANG en_US.UTF-8 pt_BR.UTF-8
-ENV LANG en_US.UTF-8 pt_BR.UTF-8
+RUN locale-gen pt_BR.UTF-8
+ENV LANG pt_BR.UTF-8
+ENV LANG pt_BR.UTF-8
+ENV LANG pt_BR.UTF-8
 
 RUN mv /jboss-4.0.5.GA ${JBOSS_HOME}
 
